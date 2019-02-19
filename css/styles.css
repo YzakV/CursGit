@@ -1,0 +1,14 @@
+body {
+   background: #f0f0e8;
+}
+.logoGit {
+   width: 50px;
+   top: 4px;
+}
+header {
+   text-align: center;
+   color: #413932;
+   /* background: #f54d27; */
+   margin: 20px 0;
+
+}
