@@ -10,5 +10,12 @@ header {
    color: #413932;
    /* background: #f54d27; */
    margin: 20px 0;
+   border-bottom: 1px solid #8c8c8c;
 
+}
+.list-command > li {
+   margin-bottom: 20px;
+}
+.contenedor-main {
+   border-left: 1px solid #8c8c8c;
 }
