@@ -3,6 +3,7 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Curso de Git y GitHub">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link rel="stylesheet" href="css/styles.css" /> 
@@ -18,11 +19,151 @@
                <h1 class="">Curso Git</h1>
             </div>
          </header>
+         <main class="row contenedor-main">
+            <div class="col">
+               <h2>Comandos basicos git</h2>
+               <ul class="list-command">
+                  <li><strong>$git status</strong>:
+                     <ul>
+                        <li>Verifica el estado en el que se encuentra el repositorio.</li>
+                        <li>Muestra los cambios realizados dentro del repositorio.</li>
+                     </ul>
+                  </li>
+                  <li><strong>$git diff</strong>:
+                     <ul>
+                        <li>Muestra a detalle la modificacion realizada en los archivos.</li>
+                        <li>Despues del comando se pueden enviar como parametro rangos en los que se desea visualizar los cambios. Ej.:
+                           <ul>
+                              <li><strong>$git diff (rama1) (rama2)</strong>:
+                                 <ul><li>Si realizaste un merge entre rama1 y 2, este comando mostrara los cambios entre estas 2 ramas</li></ul>
+                              </li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </li>
+                  <li><strong>$git add (nombre de archivo con extension que se ha modificado)</strong>:
+                     <ul>
+                        <li>Se incorpora el cambio realizado y de esta forma esta listo para su commit</li>
+                     </ul>
+                  </li>
+                  <li><strong>$git reset HEAD (nombre de archivo con extension)</strong>:
+                     <ul>
+                        <li>Sirve para revertir la incorporacion realizada con el comando <strong>$git add</strong>.</li>
+                     </ul>
+                  </li>
+                  <li><strong>$git rm (nombre de archivo a borrar del repositorio)</strong>:
+                     <ul>
+                        <li>Al borrar un archivo localmente este no se borra del repositorio; con este comando se borra el archivo en el repositorio al realizar el siguiente commit. <strong>*NOTA: rm + nombre de archivo con extension sirve para eliminar un archivo localmente</strong></li>
+                     </ul>
+                  </li>
+                  <li><strong>$git commit</strong>:
+                     <ul>
+                        <li>Se envían los cambios al repositorio local. <strong>*Se requiere un resumen breve de los cambios realizados</strong></li>
+                        <li><strong>$git commit -m "Título de los cambios"</strong>:
+                           <ul>
+                              <li>Se utiliza para enviar un commit con que solo tenga línea de título</li>
+                           </ul>
+                        </li>
+                        <li><strong>$git commit -am "Título de los cambios"</strong>:
+                           <ul>
+                              <li>Desde este comando se añaden las modificaciones realizadas y a la vez se agrega un título de una sola línea.</li>
+                           </ul>
+                        </li>
+                        <li><strong>$git commit --amend</strong>:
+                           <ul>
+                              <li>Sirve para realizar un cambio en el ultimo commit que se haya realizado</li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </li>
+                  <li><strong>$git reset --soft HEAD~1</strong>:
+                     <ul>
+                        <li>Deshace el último commit sin borrar ningún archivo (el número 1 significa último commits)</li>
+                     </ul>
+                  </li> 
+                  <li><strong>$git remote</strong>:
+                     <ul>
+                        <li>Ver la lista de remotos de tu repositorio</li>
+                        <li><strong>$git remote -v</strong>
+                           <ul>
+                              <li>Ver dirección url en la que trabaja el repositorio</li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </li>
+                  <li><strong>$git push (nombre del remoto, en este caso ORIGIN) (nombre de la rama, en este caso es MASTER)</strong>:
+                     <ul>
+                        <li>Con esto se envía el codigo a GitHub</li>
+                     </ul>
+                  </li>
+                  <li><strong>$git pull (nombre del remoto, en este caso ORIGIN) (nombre de la rama, en este caso es MASTER) </strong>:
+                     <ul>
+                        <li>Se sincronizan los cambios realizados por alguien mas en el repositorio.</li>
+                     </ul>
+                  </li>
+                  <li><strong>$git log</strong>:
+                     <ul>
+                        <li>Se obtiene el historial de cambios realizados.</li>
+                        <li><strong>$git log --decorate</strong>:
+                           <ul>
+                              <li>Muestra mas detalles en el log.</li>
+                           </ul>
+                        </li>
+                        <li>Algunos parametros adicionales para el comando log:
+                           <ul>
+                              <li><strong>--graph:</strong> Muestra los cambios realizados muy similar a GitHub; con una linea vertical.</li>
+                              <li><strong>--oneline:</strong> Muestra descripciones cortas, en una línea.</li>
+                              <li><strong>--all:</strong> Muestra todo.</li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </li>
+                  <li><strong>$git branch</strong>:
+                     <ul>
+                        <li>Muestra las ramas de tu repositorio.</li>
+                        <li><strong>$git branch (nombre de una nueva rama)</strong>:
+                           <ul>
+                              <li>Se crea una nueva rama del repositorio.</li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </li>
+                  <li><strong>$git branch -d (nombre de la rama)</strong>:
+                     <ul>
+                        <li>Se elimina la rama</li>
+                        <li>*Borra la rama siempre y cuando no haya cambios que se puedan perder</li>
+                        <li>Para borrar la rama no importando los cambios que se encuentren en ella se utiliza: <strong>$git branch -D (nombre de la rama) </strong></li>
+                     </ul>
+                  </li>
+                  <li><strong>$git checkout (nombre de la rama)</strong>:
+                     <ul>
+                        <li>Te mueves dentro de la ramas de tu repositorio.</li>
+                        <li><strong>$git checkout -b (nombre de la nueva rama)</strong>:
+                           <ul>
+                              <li>Crea una nueva rama y a la vez accede a ella.</li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </li>
+                  <li><strong>$git merge (nombre de la rama que se desea fusionar a la rama actual)</strong>:
+                     <ul>
+                        <li>Permite integrar ramas (Estando en la rama principal, se ejecuta el comando con el nombre de la rama donde se encuentran los cambios y que se desean integrar a la rama donde nos encontramos)</li>
+                     </ul>
+                  </li>
+                  <li><strong>$git gc</strong>:
+                     <ul>
+                        <li>Realiza limpieza</li>
+                     </ul>
+                  </li>
+                  <li><strong>$</strong>:
+                     <ul>
+                        <li></li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </main>
       </div>      
-
-
-
-
 
 
 
